@@ -5,7 +5,8 @@
   "scripts": {
     "hw01": "cd homeworks/hw01 && bun run start",
     "hw02": "cd homeworks/hw02 && bun run start",
-    "hw03": "cd homeworks/hw03 && bun run start"
+    "hw03": "cd homeworks/hw03 && bun run start",
+    "hw04": "cd homeworks/hw04 && bun run start"
   },
   "devDependencies": {
     "@types/bun": "latest"

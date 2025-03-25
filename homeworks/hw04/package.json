@@ -1,5 +1,5 @@
 {
-  "name": "@4it573/hw02",
+  "name": "@4it573/hw04",
   "module": "index.ts",
   "type": "module",
   "scripts": {
@@ -10,5 +10,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "hono": "^4.7.5"
   }
 }
