@@ -1,15 +1,23 @@
 # 4it573
 
-To install dependencies:
+Nainstalovat závislosti v kořenovém adresáři:
 
 ```bash
 bun install
 ```
 
-To run:
-
+Úkol 1:
 ```bash
-bun run index.ts
+bun run hw01
 ```
 
-This project was created using `bun init` in bun v1.1.33. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Úkol 2:
+```bash
+bun run hw02
+```
+
+Úkol 3:
+```bash
+bun run hw03
+```
+
