@@ -6,48 +6,19 @@ Bun.serve({
     port: 3000,
     routes: {
         "/increase": async () => {
-            let counter = 0;
-            
-            // Load counter from file
-            if (await counterFile.exists()) {
-                const fileContent = await counterFile.text();
-                counter = parseInt(fileContent);
-                if (isNaN(counter)) {
-                    counter = 0;
-                }
-            }
-            
-            await Bun.write(counterFile, `${counter + 1}`);
+            let counter = await getCounter();
+            await setCounter(counter + 1);
             return new Response((counter + 1).toString());
         },
 
         "/decrease": async () => {
-            let counter = 0;
-            
-            // Load counter from file
-            if (await counterFile.exists()) {
-                const fileContent = await counterFile.text();
-                counter = parseInt(fileContent);
-                if (isNaN(counter)) {
-                    counter = 0;
-                }
-            }
-
-            await Bun.write(counterFile, `${counter - 1}`);
+            let counter = await getCounter();
+            await setCounter(counter - 1);
             return new Response((counter - 1).toString());
         },
 
         "/read": async () => {
-            
-            if (!(await counterFile.exists())) {
-                return new Response("0");
-            }
-
-            const fileContent = await counterFile.text();
-            const counter = parseInt(fileContent);
-            if (isNaN(counter)) {
-                return new Response("0");
-            }
+            const counter = await getCounter();
             return new Response(counter.toString());
         },
     },
@@ -55,3 +26,19 @@ Bun.serve({
         return new Response("Not Found", { status: 404 });
       },
 });
+
+async function getCounter() {
+    const counterFile = Bun.file("counter.txt");
+    if (!(await counterFile.exists())) {
+        return 0;
+    }
+    const counter = parseInt(await counterFile.text());
+    if (isNaN(counter)) {
+        return 0;
+    }
+    return counter;
+}
+
+async function setCounter(counter: number) {
+    await Bun.write(counterFile, counter.toString());
+}
