@@ -17,8 +17,13 @@ bun run hw02
 ```
 
 Úkol 3:
+
 ```bash
 bun run hw03
+
+# Je potřeba mít aktuální bun verzi - lze uprgradovat přes:
+bun upgrade
+
 ```
 
 Úkol 4:
