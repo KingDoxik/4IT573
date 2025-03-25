@@ -21,3 +21,7 @@ bun run hw02
 bun run hw03
 ```
 
+Úkol 4:
+```bash
+bun run hw04
+```
