@@ -26,7 +26,7 @@ bun upgrade
 
 ```
 
-Úkol 4:
+Úkol 4/5:
 ```bash
-bun run hw04
+bun run hw05
 ```
